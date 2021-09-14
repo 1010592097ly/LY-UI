@@ -70,7 +70,7 @@ export default {
   name: "App",
   methods: {
     btnClick() {
-      alert("点击了按钮");
+      alert("点了按钮");
     },
   },
 };
