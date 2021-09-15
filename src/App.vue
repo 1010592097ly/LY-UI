@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- 按钮组件 -->
     <div class="row">
       <h3>按钮样式 【type】属性控制</h3>
       <ly-button>按钮</ly-button>
@@ -62,12 +63,38 @@
       <ly-button disabled type="warning">不可点击按钮</ly-button>
       <ly-button disabled type="danger">不可点击按钮</ly-button>
     </div>
+
+    <!-- 弹窗组件 -->
+    <div>
+      <h3>弹窗组件</h3>
+      <ly-button type="primary" @click="visible = true">启动弹窗</ly-button>
+      <ly-dialog
+        title="温馨提示"
+        width="40%"
+        top="100px"
+        :visible.sync="visible"
+      >
+        <template v-slot:title>
+          <h4>我是标题</h4>
+        </template>
+        <div>随便写点东西就行</div>
+        <template v-slot:footer>
+          <ly-button>取消</ly-button>
+          <ly-button type="primary">确定</ly-button>
+        </template>
+      </ly-dialog>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "App",
+  data() {
+    return {
+      visible: false,
+    };
+  },
   methods: {
     btnClick() {
       alert("点了按钮");
