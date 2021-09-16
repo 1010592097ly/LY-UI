@@ -103,7 +103,8 @@ export default {
       padding: 10px 20px 20px;
       text-align: right;
       box-sizing: border-box;
-      ::v-deep .one-button:first-child {
+      //deep 深度选择器
+      ::v-deep .ly-button:first-child {
         margin-right: 20px;
       }
     }
